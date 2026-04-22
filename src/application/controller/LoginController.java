@@ -37,5 +37,16 @@ public class LoginController {
 			lbl_mensaje.setText("Por favor revise los campos");
 		}
 	}
+
+	@FXML
+	private void abrirRegistro() {
+	    System.out.println("Clic en abrir registro");
+	    // Por ahora déjalo vacío para que no de error
+	}
+
+	@FXML
+	private void registroEquipo() {
+	    System.out.println("Clic en abrir equipo");
+	}
 	
 }

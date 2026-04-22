@@ -4,5 +4,9 @@ module Trashome {
 	requires javafx.fxml;
 	requires java.sql;
 	
+	opens application.controller to javafx.fxml;
+	
 	opens application to javafx.graphics, javafx.fxml;
+	
+	exports application;
 }
