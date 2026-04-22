@@ -1,4 +1,4 @@
-package Modelo;
+package application.model;
 
 public abstract class Users {
 	private String name;
