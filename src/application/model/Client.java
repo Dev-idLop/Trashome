@@ -6,4 +6,7 @@ public class Client extends Users {
 		super(name, age, idUser, CP, email, phone, password);
 	}
 
+	public Client() {
+		
+	}
 }

@@ -9,6 +9,10 @@ public abstract class Users {
 	private String phone;
 	private String password;
 	
+	public Users() {
+	
+	}
+	
 	public Users(String name, int age, int idUser, int CP, String email, String phone, String password) {
 	    if (age < 18) {
 	        throw new IllegalArgumentException("El usuario debe ser mayor de edad");
@@ -24,7 +28,7 @@ public abstract class Users {
 	    }
 
 
-	    if (CP < 10000 || CP > 99999) {
+	    if (CP < 10000 || CP > 99999) {  
 	        throw new IllegalArgumentException("Verifique su código postal (debe tener 5 dígitos)");
 	    }
 
@@ -70,6 +74,10 @@ public abstract class Users {
 
 	public int getIdUser() {
 		return idUser;
+	}
+	
+	public void setidUser(int idUser) {
+		this.idUser = idUser;
 	}
 
 	public int getCP() {

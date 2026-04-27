@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LoginController">
+<AnchorPane prefHeight="500.0" prefWidth="350.0" stylesheets="@../application.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LoginController">
    <children>
       <VBox alignment="CENTER" layoutX="40.0" layoutY="50.0" prefHeight="350.0" prefWidth="270.0" spacing="15.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="30.0">
          <children>
@@ -53,7 +53,7 @@
                </children>
             </VBox>
 
-            <Button fx:id="btn_Login" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="40.0" style="-fx-background-color: #0078D7; -fx-text-fill: white;" text="Ingresar">
+            <Button fx:id="btn_Login" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="40.0" style="-fx-background-color: #0078D7; -fx-text-fill: white;" styleClass="button-login" text="Ingresar">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
