@@ -22,5 +22,15 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/isaac/Downloads/openjfx-21.0.10/javafx-sdk-21.0.10/lib/javafx.graphics.jar" rootpath="." sourcepath="C:/Users/isaac/Downloads/openjfx-21.0.10/javafx-sdk-21.0.10/lib/src.zip">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+		<accessrules>
+			<accessrule kind="accessible" pattern="javafx/*"/>
+			<accessrule kind="discouraged" pattern="com/sun/*"/>
+			<accessrule kind="discouraged" pattern="netscape/javascript/*"/>
+		</accessrules>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

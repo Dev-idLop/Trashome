@@ -3,7 +3,6 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitMenuButton?>
@@ -15,8 +14,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #51625C;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CrearCamionController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #51625C;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CreateRouteController">
 
    <left>
       <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="800.0" prefWidth="252.0" style="-fx-background-color: #D9D4C7;" BorderPane.alignment="CENTER">
@@ -99,7 +99,7 @@
                         <Insets left="2.0" right="3.0" />
                      </HBox.margin>
                   </ImageView>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="31.0" prefWidth="212.0" styleClass="boton-estilo" stylesheets="@CreateRoute.css" text="Registro Camiones">
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="31.0" prefWidth="212.0" styleClass="boton-estilo" stylesheets="@CrearCamion.css" text="Registro Camiones">
                      <HBox.margin>
                         <Insets left="3.0" />
                      </HBox.margin>
@@ -119,10 +119,14 @@
                         <Insets right="3.0" />
                      </HBox.margin>
                   </ImageView>
-                  <Button fx:id="bottonRouts" alignment="CENTER" mnemonicParsing="false" onAction="#ChangeToRouts" prefHeight="31.0" prefWidth="217.0" styleClass="boton-estilo" stylesheets="@CrearCamion.css" text="Registro Rutas">
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="31.0" prefWidth="217.0" styleClass="boton-estilo" text="Rigistro Rutas">
                      <HBox.margin>
                         <Insets left="3.0" />
                      </HBox.margin>
+                     <stylesheets>
+                        <URL value="@CrearCamion.css" />
+                        <URL value="@CreateRoute.css" />
+                     </stylesheets>
                   </Button>
                </children>
                <VBox.margin>
@@ -202,7 +206,7 @@
          <top>
             <HBox alignment="CENTER" prefHeight="60.0" prefWidth="929.0" style="-fx-background-color: #2B3034; -fx-border-width: 2; -fx-border-radius: 15; -fx-background-radius: 15;" BorderPane.alignment="CENTER">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="339.0" style="-fx-text-fill: #ffffff;" text="Registro de Camiones" textAlignment="CENTER" textFill="WHITE">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="316.0" style="-fx-text-fill: #ffffff;" text="Registro de Rutas" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Hack Nerd Font Propo Regular" size="27.0" />
                      </font>
@@ -216,7 +220,17 @@
          <left>
             <VBox prefHeight="600.0" prefWidth="231.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label prefHeight="20.0" prefWidth="228.0" text="Matricula" textFill="#f8f8f8">
+                  <Label prefHeight="20.0" prefWidth="228.0" text="Codigo Postal" textFill="#f8f8f8">
+                     <font>
+                        <Font name="Hack Nerd Font Regular" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField promptText="45693">
+                     <VBox.margin>
+                        <Insets bottom="35.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label prefHeight="20.0" prefWidth="228.0" text="Municipio" textFill="#f8f8f8">
                      <font>
                         <Font name="Hack Nerd Font Regular" size="16.0" />
                      </font>
@@ -224,12 +238,12 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField promptText="4230DJL">
+                  <TextField promptText="El Salto">
                      <VBox.margin>
                         <Insets bottom="35.0" />
                      </VBox.margin>
                   </TextField>
-                  <Label prefHeight="20.0" prefWidth="223.0" text="Codigo de Empleado" textFill="#f8f8f8">
+                  <Label prefHeight="20.0" prefWidth="223.0" text="Calles" textFill="#f8f8f8">
                      <font>
                         <Font name="Hack Nerd Font Regular" size="16.0" />
                      </font>
@@ -237,12 +251,23 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField promptText="219201686">
+                  <HBox prefHeight="22.0" prefWidth="226.0">
+                     <children>
+                        <TextField prefHeight="25.0" prefWidth="201.0" promptText="Santa Marta">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" style="-fx-background-radius: 3;" styleClass="boton-estilo" stylesheets="@CreateRoute.css" text="+" />
+                     </children>
                      <VBox.margin>
                         <Insets bottom="35.0" />
                      </VBox.margin>
-                  </TextField>
-                  <Label prefHeight="20.0" prefWidth="224.0" text="Tipo de Contenedor" textFill="#f8f8f8">
+                  </HBox>
+                  <Label prefHeight="20.0" prefWidth="224.0" text="Dias de recoleccion" textFill="#f8f8f8">
                      <font>
                         <Font name="Hack Nerd Font Regular" size="16.0" />
                      </font>
@@ -252,9 +277,13 @@
                   </Label>
                   <SplitMenuButton mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="247.0">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Organico" />
-                      <MenuItem mnemonicParsing="false" text="Inorganico" />
-                        <MenuItem mnemonicParsing="false" text="Reciclable" />
+                      <MenuItem mnemonicParsing="false" text="Lunes" />
+                      <MenuItem mnemonicParsing="false" text="Martes" />
+                        <MenuItem mnemonicParsing="false" text="Miercoles" />
+                        <MenuItem mnemonicParsing="false" text="Jueves" />
+                        <MenuItem mnemonicParsing="false" text="Viernes" />
+                        <MenuItem mnemonicParsing="false" text="Sabado" />
+                        <MenuItem mnemonicParsing="false" text="Domingo" />
                     </items>
                      <stylesheets>
                         <URL value="@CrearCamion.css" />
@@ -264,7 +293,34 @@
                         <Insets bottom="35.0" />
                      </VBox.margin>
                   </SplitMenuButton>
-                  <Label prefHeight="20.0" prefWidth="227.0" text="Asignacion de Colonia" textFill="#f8f8f8">
+                  <Label prefHeight="20.0" prefWidth="227.0" text="Tipo de Asentamiento" textFill="#f8f8f8">
+                     <font>
+                        <Font name="Hack Nerd Font Regular" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <SplitMenuButton contentDisplay="RIGHT" mnemonicParsing="false" popupSide="RIGHT" prefHeight="25.0" prefWidth="230.0">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Colonia" />
+                        <MenuItem mnemonicParsing="false" text="Condominio" />
+                        <MenuItem mnemonicParsing="false" text="Conjunto habitacional" />
+                        <MenuItem mnemonicParsing="false" text="Equipamiento" />
+                        <MenuItem mnemonicParsing="false" text="Fraccionamiento" />
+                        <MenuItem mnemonicParsing="false" text="Pueblo" />
+                        <MenuItem mnemonicParsing="false" text="Unidad Habitacional" />
+                        <MenuItem mnemonicParsing="false" text="Zona Industrial" />
+                     </items>
+                     <stylesheets>
+                        <URL value="@CrearCamion.css" />
+                        <URL value="@CrearCamion.css" />
+                     </stylesheets>
+                     <VBox.margin>
+                        <Insets bottom="35.0" />
+                     </VBox.margin>
+                  </SplitMenuButton>
+                  <Label prefHeight="20.0" prefWidth="227.0" text="Asentamiento" textFill="#f8f8f8">
                      <font>
                         <Font name="Hack Nerd Font Regular" size="16.0" />
                      </font>
@@ -281,19 +337,7 @@
                         <URL value="@CrearCamion.css" />
                         <URL value="@CrearCamion.css" />
                      </stylesheets>
-                     <VBox.margin>
-                        <Insets bottom="35.0" />
-                     </VBox.margin>
                   </SplitMenuButton>
-                  <Label prefHeight="20.0" prefWidth="227.0" text="Fecha de Registro" textFill="#f8f8f8">
-                     <font>
-                        <Font name="Hack Nerd Font Regular" size="16.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
-                  </Label>
-                  <DatePicker prefHeight="25.0" prefWidth="229.0" />
                </children>
                <BorderPane.margin>
                   <Insets left="35.0" top="40.0" />
@@ -303,24 +347,31 @@
                </padding>
             </VBox>
          </left>
-         <right>
-            <VBox prefHeight="540.0" prefWidth="517.0" style="-fx-background-color: #D9D4C7;" BorderPane.alignment="CENTER">
-               <BorderPane.margin>
-                  <Insets bottom="60.0" right="40.0" top="50.0" />
-               </BorderPane.margin>
-            </VBox>
-         </right>
          <bottom>
-            <HBox alignment="TOP_RIGHT" prefHeight="61.0" prefWidth="918.0" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="54.0" prefWidth="918.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="126.0" styleClass="boton-estilo" stylesheets="@CreateRoute.css" text="Guardar">
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="125.0" styleClass="boton-estilo" stylesheets="@CreateRoute.css" text="Guardar">
                      <HBox.margin>
-                        <Insets right="35.0" />
+                        <Insets bottom="20.0" right="30.0" />
                      </HBox.margin>
+                     <font>
+                        <Font name="Hack Nerd Font Mono Regular" size="12.0" />
+                     </font>
                   </Button>
                </children>
             </HBox>
          </bottom>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <WebView fx:id="maps" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                     </BorderPane.margin>
+                  </WebView>
+               </center>
+            </BorderPane>
+         </center>
 
       </BorderPane>
    </center>

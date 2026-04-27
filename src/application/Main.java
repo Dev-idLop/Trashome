@@ -12,10 +12,14 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("CrearCamion.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("CreateRoute.fxml"));
 			Scene scene =new Scene(root);
 			primaryStage.setScene(scene); 
 			primaryStage.show();
+			
+			
+			
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
