@@ -1,4 +1,4 @@
-package Modelo;
+package application.model;
 
 public class Client extends Users {
 
@@ -6,4 +6,7 @@ public class Client extends Users {
 		super(name, age, idUser, CP, email, phone, password);
 	}
 
+	public Client() {
+		
+	}
 }
