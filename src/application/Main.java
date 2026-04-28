@@ -1,5 +1,6 @@
 package application;
 
+import Modelo.ConexionSQL;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
@@ -12,7 +13,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("CreateRoute.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/application/view/CreateRoute.fxml"));
 			Scene scene =new Scene(root);
 			primaryStage.setScene(scene); 
 			primaryStage.show();
@@ -27,5 +28,7 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+		ConexionSQL conexion = new ConexionSQL();
+		conexion.Conectar();
 	}
 }

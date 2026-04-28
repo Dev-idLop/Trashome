@@ -8,7 +8,7 @@ public class Camiones {
 	private String typeBus, zonaAsignada, empleadoManejo;
 	
 	//----------CONSTRUCTOR----------
-	public Camiones(String matriculaCamion, String typeBus ) {
+	public Camiones(String matriculaCamion, String typeBus, String empleadoManejo, String zonaAsignada ) {
 		String matriculaCam = matriculaCamion.toUpperCase();
 		
 		typeBus = "Organico";
@@ -82,17 +82,6 @@ public class Camiones {
 	}
 	
 	
-		
-		
-	// codigo temporal solo para verificar el funcionamiento de los metodos.
-
-	public static void main(String[] args) {
-		Scanner entrada = new Scanner(System.in);
-		String matricula;
-		System.out.print("Ingresa Matricula: ");
-		matricula = entrada.next();
-		Camiones cam = new Camiones(matricula, matricula);
-	}
 
 	
 	

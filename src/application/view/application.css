@@ -1,0 +1,30 @@
+/* El fondo de la ventana principal */
+.root {
+    -fx-background-color: #f4f4f4;
+}
+
+/* Estilo para los botones principales */
+.button-login {
+    -fx-background-color: #27ae60; /* Un verde ecológico */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+}
+
+.button-login:hover {
+    -fx-background-color: #2ecc71; /* Verde más claro al pasar el mouse */
+}
+
+/* Estilo para los campos de texto */
+.text-field {
+    -fx-background-radius: 10;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 10;
+    -fx-padding: 8;
+}
+
+.text-field:focused {
+    -fx-border-color: #27ae60;
+    -fx-border-width: 2;
+}/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */

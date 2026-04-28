@@ -6,7 +6,6 @@ module Trashome {
 	
 	opens application.controller to javafx.fxml;
 	requires javafx.graphics;
-	requires javafx.fxml;
     requires javafx.web;
 	
 	
