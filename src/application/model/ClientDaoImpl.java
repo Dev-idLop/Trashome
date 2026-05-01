@@ -27,7 +27,7 @@ public class ClientDaoImpl implements ClienteDao {
             ps.setInt(3, cliente.getAge());
             ps.setString(4, cliente.getEmail());
             ps.setString(5, cliente.getPassword());
-            ps.setInt(6, Integer.parseInt(cliente.getPhone()));
+            ps.setString(6, cliente.getPhone());
             ps.setInt(7, cliente.getCP());
             ps.setString(8, cliente.getAddress());
 
@@ -49,7 +49,7 @@ public class ClientDaoImpl implements ClienteDao {
             ps.setInt(2, cliente.getAge());
             ps.setString(3, cliente.getEmail());
             ps.setString(4, cliente.getPassword());
-            ps.setInt(5, Integer.parseInt(cliente.getPhone()));
+            ps.setString(5, cliente.getPhone());
             ps.setInt(6, cliente.getCP());
             ps.setString(7, cliente.getAddress());
             ps.setInt(8, cliente.getIdUser());
@@ -98,7 +98,7 @@ public class ClientDaoImpl implements ClienteDao {
                 cliente.setAge(rs.getInt("edad"));
                 cliente.setEmail(rs.getString("correoElectronico"));
                 cliente.setPassword(rs.getString("contrasena"));
-                cliente.setPhone(String.valueOf(rs.getInt("numTelefono")));
+                cliente.setPhone(rs.getString("numTelefono"));
                 cliente.setCP(rs.getInt("codigoPostal"));
                 cliente.setAddress(rs.getString("direccionDom"));
             }
@@ -116,8 +116,7 @@ public class ClientDaoImpl implements ClienteDao {
         String sql = "SELECT * FROM usuarios WHERE correoElectronico = ?";
         Client cliente = null;
 
-        try (Connection con = new ConexionSQL().conectar();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+        try (PreparedStatement ps = conexion.prepareStatement(sql)) {
 
             ps.setString(1, email);
 
@@ -132,7 +131,7 @@ public class ClientDaoImpl implements ClienteDao {
                 cliente.setAge(rs.getInt("edad"));
                 cliente.setEmail(rs.getString("correoElectronico"));
                 cliente.setPassword(rs.getString("contrasena"));
-                cliente.setPhone(String.valueOf(rs.getInt("numTelefono")));
+                cliente.setPhone(rs.getString("numTelefono"));
                 cliente.setCP(rs.getInt("codigoPostal"));
                 cliente.setAddress(rs.getString("direccionDom"));
             }
