@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import Modelo.ConexionSQL;
 
 public class ClientDaoImpl implements ClienteDao {
 
@@ -141,5 +140,39 @@ public class ClientDaoImpl implements ClienteDao {
         }
 
         return cliente;
+    }
+    
+    @Override
+    public Client inicioDeSesionId(int idUser) {
+    	
+    	String sql = "SELECT * FROM usuarios WHERE IdUsuario = ?";
+    	Client cliente = null;
+    	
+    	try (PreparedStatement ps = conexion.prepareStatement(sql)) {
+
+            ps.setInt(1, idUser);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+
+                cliente = new Client();
+
+                cliente.setidUser(rs.getInt("IdUsuario"));
+                cliente.setName(rs.getString("nombre"));
+                cliente.setAge(rs.getInt("edad"));
+                cliente.setEmail(rs.getString("correoElectronico"));
+                cliente.setPassword(rs.getString("contrasena"));
+                cliente.setPhone(rs.getString("numTelefono"));
+                cliente.setCP(rs.getInt("codigoPostal"));
+                cliente.setAddress(rs.getString("direccionDom"));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error al buscar por email: " + e);
+        }
+    	
+    	return cliente;
+    	
     }
 }
